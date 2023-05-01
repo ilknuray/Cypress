@@ -2,16 +2,15 @@
 
 describe('Custom command',() => {
 
-    it('',() => {
-
+    it('Amazon search', () => {
+     
+     //cy.amazonSearch('iphone')
+     cy.amazonSearch('iphone')
+     cy.get('.a-color-state').should('include.text','iphone')
 
 
     })
-    it('',() => {
 
-
-
-    })
 
 
 

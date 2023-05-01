@@ -32,12 +32,13 @@ Cypress.Commands.add('ap_login',(email,password) => {
     cy.get('#email').type(email)
     cy.get('#passwd').type(password)
     cy.get('#SubmitLogin > span').click()
+})
 
     //Amazon aramasi icin
-    Cypress.Commands.add('amazonSearch',(productName) => {
-        cy.visit('https://www.amazon.com/')
+Cypress.Commands.add('amazonSearch', (productName) => {
+
+        cy.visit('https://www.amazon.com')
         cy.get('#twotabsearchtextbox').type(productName)
         cy.get('#nav-search-submit-button').click()
     })
     
-})
