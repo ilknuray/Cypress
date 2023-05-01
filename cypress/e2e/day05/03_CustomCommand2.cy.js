@@ -8,6 +8,9 @@ describe('Custom command',() => {
      cy.amazonSearch('iphone')
      cy.get('.a-color-state').should('include.text','iphone')
 
+     cy.screenshot()
+     cy.get('.a-color-state').screenshot()
+
 
     })
 
