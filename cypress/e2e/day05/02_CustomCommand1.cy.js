@@ -15,6 +15,7 @@ describe('Custom command',() => {
     
     it.only('',() => {
       cy.ap_login('ilknuray1318@gmail.com','123ilknur')
+      cy.get('ol > li').should('contain.text','Authentication failed.')
 
     })
     it('Negative login',() => {
