@@ -15,16 +15,28 @@ describe('Check boxes',() => {
 
 
     })
-    it.only('Test Case  all check boxes 1',() => {
+    it('Test Case  all check boxes 1',() => {
         cy.visit('http://automationpractice.pl/index.php')
         cy.get('.sf-menu > :nth-child(1) > [href="http://automationpractice.pl/index.php?id_category=3&controller=category"]').click()
        cy.get("input[type='checkbox']").check()
+       cy.wait(3000)
+       cy.get("input[type='checkbox']").uncheck()
+       cy.get("input[type='checkbox']").should('not.be.checked')
 
 
 
 
     })
-    it('Test Case 3',() => {
+    it.only('Test Case  All checkboxes 2',() => {
+        cy.visit('http://automationpractice.pl/index.php')
+        cy.get('.sf-menu > :nth-child(1) > [href="http://automationpractice.pl/index.php?id_category=3&controller=category"]').click()
+
+        cy.get("input[type='checkbox']").eq(0).check()
+
+        cy.get("input[type='checkbox']").eq(4).check()
+        cy.get("input[type='checkbox']").eq(11).check()
+        cy.get("input[type='checkbox']").uncheck()
+        cy.get("input[type='checkbox']").should('not.be.checked')
 
 
 
